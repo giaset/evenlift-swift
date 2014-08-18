@@ -10,6 +10,12 @@ import UIKit
 
 class LFTLoginViewController: UIViewController {
     
+    init(coder aDecoder: NSCoder!) {
+        // do shit here
+        
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

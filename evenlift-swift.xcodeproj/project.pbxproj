@@ -20,6 +20,13 @@
 			remoteGlobalIDString = 6898991A19A28638007896B1;
 			remoteInfo = "evenlift-swift";
 		};
+		6898993819A28641007896B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6898991319A28638007896B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6898991A19A28638007896B1;
+			remoteInfo = "evenlift-swift";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +142,7 @@
 			);
 			dependencies = (
 				6898992A19A28639007896B1 /* PBXTargetDependency */,
+				6898993919A28641007896B1 /* PBXTargetDependency */,
 			);
 			name = "evenlift-swiftTests";
 			productName = "evenlift-swiftTests";
@@ -219,6 +227,11 @@
 			isa = PBXTargetDependency;
 			target = 6898991A19A28638007896B1 /* evenlift-swift */;
 			targetProxy = 6898992919A28639007896B1 /* PBXContainerItemProxy */;
+		};
+		6898993919A28641007896B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6898991A19A28638007896B1 /* evenlift-swift */;
+			targetProxy = 6898993819A28641007896B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

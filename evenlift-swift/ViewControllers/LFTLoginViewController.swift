@@ -56,8 +56,16 @@ class LFTLoginViewController: UIViewController {
     }
     
     func showAlertWithTitle(title: String, message: String) {
-        var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        self.presentViewController(alert, animated: true, completion: nil)
+        //var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        //self.presentViewController(alert, animated: true, completion: nil)
+        
+        // Support for UIAlertViews, which are deprecated starting in iOS8
+        var alert = UIAlertView()
+        alert.title = title
+        alert.message = message
+        alert.addButtonWithTitle("Ok")
+        
+        alert.show()
     }
     
 }

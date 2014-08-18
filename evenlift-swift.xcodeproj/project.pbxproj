@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19CA78E8CB4142ADAFC5AFCA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96EBED7F79C457696339B30 /* libPods.a */; };
+		6849AA9419A2C03F0019EA31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6849AA9319A2C03F0019EA31 /* Foundation.framework */; };
 		6898992119A28639007896B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6898992019A28639007896B1 /* AppDelegate.swift */; };
 		6898992319A28639007896B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6898992219A28639007896B1 /* Images.xcassets */; };
 		6898993D19A28763007896B1 /* LFTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6898993C19A28763007896B1 /* LFTLoginViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6849AA9319A2C03F0019EA31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6898991B19A28639007896B1 /* evenlift-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "evenlift-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6898991F19A28639007896B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6898992019A28639007896B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6849AA9419A2C03F0019EA31 /* Foundation.framework in Frameworks */,
 				68BF6BC319A29290006844A6 /* Social.framework in Frameworks */,
 				68BF6BC119A2928B006844A6 /* Accounts.framework in Frameworks */,
 				68BF6BBD19A290D0006844A6 /* SystemConfiguration.framework in Frameworks */,
@@ -109,6 +112,7 @@
 		C6B4481A5F9C4FE484AB777E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6849AA9319A2C03F0019EA31 /* Foundation.framework */,
 				68BF6BC219A29290006844A6 /* Social.framework */,
 				68BF6BC019A2928B006844A6 /* Accounts.framework */,
 				68BF6BBE19A2926D006844A6 /* FirebaseSimpleLogin.framework */,
@@ -322,6 +326,21 @@
 				);
 				INFOPLIST_FILE = "evenlift-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-ObjC",
+					"-lc++",
+					"-licucore",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					Firebase,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "evenlift-swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -341,6 +360,21 @@
 				);
 				INFOPLIST_FILE = "evenlift-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-ObjC",
+					"-lc++",
+					"-licucore",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					Firebase,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "evenlift-swift-Bridging-Header.h";
 			};

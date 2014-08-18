@@ -39,7 +39,7 @@ class LFTLoginViewController: UIViewController {
     }
     
     func login() {
-        authClient!.loginToFacebookAppWithId("420007321469839", permissions: nil, audience: ACFacebookAudienceFriends, withCompletionBlock:{
+        authClient!.loginToFacebookAppWithId("420007321469839", permissions: nil, audience: ACFacebookAudienceOnlyMe, withCompletionBlock:{
             (error: NSError!, user: FAUser!) in
             if (error) {
                 // there was an error

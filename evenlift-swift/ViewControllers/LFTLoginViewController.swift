@@ -13,13 +13,32 @@ class LFTLoginViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        LFTSpotter.sharedInstance.makeSureUserIsLoggedIn(completion: {
+        /*LFTSpotter.sharedInstance.makeSureUserIsLoggedIn(completion: {
             self.launchApp()
-            })
+            })*/
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        launchApp()
     }
     
     func launchApp() {
-        LFTSpotter.sharedInstance.showAlertWithTitle("Success", message: "Fuck yeah.")
+        var workouts = LFTWorkoutsViewController(style: .Grouped)
+        var workoutsNavController = UINavigationController(rootViewController: workouts)
+        
+        var exercises = LFTExercisesViewController(style: .Grouped)
+        var exercisesNavController = UINavigationController(rootViewController: exercises)
+        
+        var controllers = NSMutableArray()
+        controllers.addObject(workoutsNavController)
+        controllers.addObject(exercisesNavController)
+        
+        var tabBarController = UITabBarController()
+        tabBarController.viewControllers = controllers
+        
+        self.presentViewController(tabBarController, animated: false, completion: nil)
     }
     
 }

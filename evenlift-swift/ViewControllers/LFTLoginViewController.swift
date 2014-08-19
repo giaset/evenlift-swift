@@ -27,7 +27,7 @@ class LFTLoginViewController: UIViewController {
             (error: NSError!, user: FAUser!) in
             if (error) {
                 // there was an error
-                self.showAlertWithTitle("Error", message: error.description)
+                LFTHelpers.showAlertWithTitle("Error", message: error.description)
             } else if (!user) {
                 // user is not logged in
                 self.login()
@@ -43,7 +43,7 @@ class LFTLoginViewController: UIViewController {
             (error: NSError!, user: FAUser!) in
             if (error) {
                 // there was an error
-                self.showAlertWithTitle("Error", message: error.description)
+                LFTHelpers.showAlertWithTitle("Error", message: error.description)
             } else {
                 // login successful
                 self.launchApp()
@@ -52,20 +52,7 @@ class LFTLoginViewController: UIViewController {
     }
     
     func launchApp() {
-        showAlertWithTitle("Success", message: "Fuck yeah.")
-    }
-    
-    func showAlertWithTitle(title: String, message: String) {
-        //var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        //self.presentViewController(alert, animated: true, completion: nil)
-        
-        // Support for UIAlertViews, which are deprecated starting in iOS8
-        var alert = UIAlertView()
-        alert.title = title
-        alert.message = message
-        alert.addButtonWithTitle("Ok")
-        
-        alert.show()
+        LFTHelpers.showAlertWithTitle("Success", message: "Fuck yeah.")
     }
     
 }

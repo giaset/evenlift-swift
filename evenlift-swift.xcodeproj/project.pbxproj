@@ -21,6 +21,7 @@
 		68BF6BBF19A2926D006844A6 /* FirebaseSimpleLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF6BBE19A2926D006844A6 /* FirebaseSimpleLogin.framework */; };
 		68BF6BC119A2928B006844A6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF6BC019A2928B006844A6 /* Accounts.framework */; };
 		68BF6BC319A29290006844A6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF6BC219A29290006844A6 /* Social.framework */; };
+		68C2A42619A33E4D003C1DF4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C2A42519A33E4D003C1DF4 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		68BF6BBE19A2926D006844A6 /* FirebaseSimpleLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseSimpleLogin.framework; sourceTree = "<group>"; };
 		68BF6BC019A2928B006844A6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		68BF6BC219A29290006844A6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		68C2A42519A33E4D003C1DF4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		AEFA78114E2A4D2AA8D358BD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B96EBED7F79C457696339B30 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -57,6 +59,7 @@
 				68BF6BB919A290C4006844A6 /* CFNetwork.framework in Frameworks */,
 				68BF6BBF19A2926D006844A6 /* FirebaseSimpleLogin.framework in Frameworks */,
 				68BF6BB719A290BE006844A6 /* libc++.dylib in Frameworks */,
+				68C2A42619A33E4D003C1DF4 /* FacebookSDK.framework in Frameworks */,
 				68BF6BB519A290B6006844A6 /* libicucore.dylib in Frameworks */,
 				19CA78E8CB4142ADAFC5AFCA /* libPods.a in Frameworks */,
 			);
@@ -115,6 +118,7 @@
 		C6B4481A5F9C4FE484AB777E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68C2A42519A33E4D003C1DF4 /* FacebookSDK.framework */,
 				6849AA9319A2C03F0019EA31 /* Foundation.framework */,
 				68BF6BC219A29290006844A6 /* Social.framework */,
 				68BF6BC019A2928B006844A6 /* Accounts.framework */,
@@ -327,6 +331,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/GiaSet/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "evenlift-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -361,6 +366,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/GiaSet/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "evenlift-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

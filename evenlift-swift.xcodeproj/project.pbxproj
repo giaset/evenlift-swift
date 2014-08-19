@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		6849AA9319A2C03F0019EA31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		689557EF19A3166C0098DBB6 /* LFTSpotter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTSpotter.swift; path = "evenlift-swift/LFTSpotter.swift"; sourceTree = "<group>"; };
+		689557EF19A3166C0098DBB6 /* LFTSpotter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTSpotter.swift; sourceTree = "<group>"; };
 		6898991B19A28639007896B1 /* evenlift-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "evenlift-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6898991F19A28639007896B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6898992019A28639007896B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +71,6 @@
 		6898991219A28638007896B1 = {
 			isa = PBXGroup;
 			children = (
-				689557EF19A3166C0098DBB6 /* LFTSpotter.swift */,
 				6898991D19A28639007896B1 /* evenlift-swift */,
 				6898991C19A28639007896B1 /* Products */,
 				AEFA78114E2A4D2AA8D358BD /* Pods.xcconfig */,
@@ -91,6 +90,7 @@
 		6898991D19A28639007896B1 /* evenlift-swift */ = {
 			isa = PBXGroup;
 			children = (
+				689557EF19A3166C0098DBB6 /* LFTSpotter.swift */,
 				6898992019A28639007896B1 /* AppDelegate.swift */,
 				6898993E19A2876A007896B1 /* ViewControllers */,
 				6898992219A28639007896B1 /* Images.xcassets */,

@@ -10,23 +10,23 @@ import UIKit
 
 class LFTSpotter: NSObject {
     
+    /* Global Variables */
     let url = "https://evenlift.firebaseio.com/"
     var firebase: Firebase
     var authClient: FirebaseSimpleLogin
-    
     let facebookAppId = "420007321469839"
     
-    init() {
-        firebase = Firebase(url: url)
-        authClient = FirebaseSimpleLogin(ref: firebase)
-    }
-    
-    // From StackOverflow, how to create Singletons in Swift
+    /* Singleton */
     class var sharedInstance: LFTSpotter {
     struct Static {
         static let instance: LFTSpotter = LFTSpotter()
         }
         return Static.instance
+    }
+    
+    init() {
+        firebase = Firebase(url: url)
+        authClient = FirebaseSimpleLogin(ref: firebase)
     }
     
     func makeSureUserIsLoggedIn(#completion: () -> ()) {
@@ -70,6 +70,11 @@ class LFTSpotter: NSObject {
         alert.addButtonWithTitle("Ok")
         
         alert.show()
+    }
+    
+    /* User ID */
+    func userId() -> String? {
+        return NSUserDefaults.standardUserDefaults().stringForKey("uid")
     }
     
 }

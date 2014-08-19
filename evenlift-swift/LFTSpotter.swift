@@ -1,5 +1,5 @@
 //
-//  LFTHelpers.swift
+//  LFTSpotter.swift
 //  evenlift-swift
 //
 //  Created by Gianni Settino on 2014-08-19.
@@ -8,7 +8,18 @@
 
 import UIKit
 
-class LFTHelpers {
+class LFTSpotter: NSObject {
+    
+    init() {
+    }
+    
+    // From StackOverflow, how to create Singletons in Swift
+    class var sharedInstance: LFTSpotter {
+    struct Static {
+        static let instance: LFTSpotter = LFTSpotter()
+        }
+        return Static.instance
+    }
     
     class func showAlertWithTitle(title: String, message: String) {
         // Support for UIAlertViews, which are deprecated starting in iOS8

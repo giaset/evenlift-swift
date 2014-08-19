@@ -27,7 +27,7 @@ class LFTLoginViewController: UIViewController {
             (error: NSError!, user: FAUser!) in
             if (error) {
                 // there was an error
-                LFTHelpers.showAlertWithTitle("Error", message: error.description)
+                LFTSpotter.showAlertWithTitle("Error", message: error.description)
             } else if (!user) {
                 // user is not logged in
                 self.login()
@@ -43,7 +43,7 @@ class LFTLoginViewController: UIViewController {
             (error: NSError!, user: FAUser!) in
             if (error) {
                 // there was an error
-                LFTHelpers.showAlertWithTitle("Error", message: error.description)
+                LFTSpotter.showAlertWithTitle("Error", message: error.description)
             } else {
                 // login successful
                 self.launchApp()
@@ -52,7 +52,7 @@ class LFTLoginViewController: UIViewController {
     }
     
     func launchApp() {
-        LFTHelpers.showAlertWithTitle("Success", message: "Fuck yeah.")
+        LFTSpotter.showAlertWithTitle("Success", message: "Fuck yeah.")
     }
     
 }

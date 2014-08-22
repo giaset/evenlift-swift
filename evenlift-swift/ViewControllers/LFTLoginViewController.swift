@@ -25,6 +25,7 @@ class LFTLoginViewController: UIViewController {
     }
     
     func launchApp() {
+        presentViewController(UINavigationController(rootViewController: LFTMainViewController()), animated: false, completion: nil)
     }
     
 }

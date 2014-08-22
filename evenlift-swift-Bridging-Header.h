@@ -5,3 +5,4 @@
 #import <Firebase/Firebase.h>
 #import <FirebaseSimpleLogin/FirebaseSimpleLogin.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <FlatUIKit/FlatUIKit.h>

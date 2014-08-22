@@ -10,6 +10,7 @@
 		19CA78E8CB4142ADAFC5AFCA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96EBED7F79C457696339B30 /* libPods.a */; };
 		6849AA9419A2C03F0019EA31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6849AA9319A2C03F0019EA31 /* Foundation.framework */; };
 		685AB8C019A7959300879E22 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685AB8BF19A7959300879E22 /* CoreText.framework */; };
+		685AB8C219A7F02300879E22 /* LFTMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685AB8C119A7F02300879E22 /* LFTMainViewController.swift */; };
 		689557F019A3166C0098DBB6 /* LFTSpotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689557EF19A3166C0098DBB6 /* LFTSpotter.swift */; };
 		6898992119A28639007896B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6898992019A28639007896B1 /* AppDelegate.swift */; };
 		6898992319A28639007896B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6898992219A28639007896B1 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		6849AA9319A2C03F0019EA31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		685AB8BF19A7959300879E22 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		685AB8C119A7F02300879E22 /* LFTMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTMainViewController.swift; path = ViewControllers/LFTMainViewController.swift; sourceTree = "<group>"; };
 		689557EF19A3166C0098DBB6 /* LFTSpotter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTSpotter.swift; sourceTree = "<group>"; };
 		6898991B19A28639007896B1 /* evenlift-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "evenlift-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6898991F19A28639007896B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				6898993C19A28763007896B1 /* LFTLoginViewController.swift */,
+				685AB8C119A7F02300879E22 /* LFTMainViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685AB8C219A7F02300879E22 /* LFTMainViewController.swift in Sources */,
 				689557F019A3166C0098DBB6 /* LFTSpotter.swift in Sources */,
 				6898992119A28639007896B1 /* AppDelegate.swift in Sources */,
 				6898993D19A28763007896B1 /* LFTLoginViewController.swift in Sources */,

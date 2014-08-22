@@ -1,10 +1,13 @@
 PODS:
   - Firebase (1.1.11)
+  - FlatUIKit (1.4)
 
 DEPENDENCIES:
   - Firebase (>= 1.1.11)
+  - FlatUIKit
 
 SPEC CHECKSUMS:
   Firebase: 05357817d13cec124e8090df21dee3130046e59a
+  FlatUIKit: edc1ed0c130687dc64a10e45851cc58925f6893d
 
 COCOAPODS: 0.33.1

@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        // Stylin'
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        
         self.window!.rootViewController = LFTLoginViewController()
         
         self.window!.makeKeyAndVisible()

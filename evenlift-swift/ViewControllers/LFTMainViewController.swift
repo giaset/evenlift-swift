@@ -14,7 +14,15 @@ class LFTMainViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Evenlift"
-        navigationController.navigationBar.translucent = false
+        
+        view.backgroundColor = UIColor.cloudsColor()
+        
+        // Style the navBar
+        navigationController.navigationBar.configureFlatNavigationBarWithColor(UIColor.midnightBlueColor())
+        var attributes = NSMutableDictionary(dictionary: navigationController.navigationBar.titleTextAttributes)
+        attributes.setValue(UIFont.boldFlatFontOfSize(18), forKey: NSFontAttributeName)
+        attributes.setValue(UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
+        navigationController.navigationBar.titleTextAttributes = attributes
     }
     
 }

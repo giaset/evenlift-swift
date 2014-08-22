@@ -17,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        // Stylin'
-        UINavigationBar.appearance().translucent = false
-        UITabBar.appearance().translucent = false
-        UITabBar.appearance().tintColor = UIColor.redColor()
-        
         self.window!.rootViewController = LFTLoginViewController()
         
         self.window!.makeKeyAndVisible()

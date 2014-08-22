@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		19CA78E8CB4142ADAFC5AFCA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B96EBED7F79C457696339B30 /* libPods.a */; };
-		680F48E119A3F94800A7BB81 /* LFTWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F48E019A3F94800A7BB81 /* LFTWorkoutsViewController.swift */; };
-		680F48E319A3FB8E00A7BB81 /* LFTExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F48E219A3FB8E00A7BB81 /* LFTExercisesViewController.swift */; };
 		6849AA9419A2C03F0019EA31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6849AA9319A2C03F0019EA31 /* Foundation.framework */; };
+		685AB8C019A7959300879E22 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685AB8BF19A7959300879E22 /* CoreText.framework */; };
 		689557F019A3166C0098DBB6 /* LFTSpotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689557EF19A3166C0098DBB6 /* LFTSpotter.swift */; };
 		6898992119A28639007896B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6898992019A28639007896B1 /* AppDelegate.swift */; };
 		6898992319A28639007896B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6898992219A28639007896B1 /* Images.xcassets */; };
@@ -27,9 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		680F48E019A3F94800A7BB81 /* LFTWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTWorkoutsViewController.swift; path = ViewControllers/LFTWorkoutsViewController.swift; sourceTree = "<group>"; };
-		680F48E219A3FB8E00A7BB81 /* LFTExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTExercisesViewController.swift; path = ViewControllers/LFTExercisesViewController.swift; sourceTree = "<group>"; };
 		6849AA9319A2C03F0019EA31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		685AB8BF19A7959300879E22 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		689557EF19A3166C0098DBB6 /* LFTSpotter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTSpotter.swift; sourceTree = "<group>"; };
 		6898991B19A28639007896B1 /* evenlift-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "evenlift-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6898991F19A28639007896B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685AB8C019A7959300879E22 /* CoreText.framework in Frameworks */,
 				6849AA9419A2C03F0019EA31 /* Foundation.framework in Frameworks */,
 				68BF6BC319A29290006844A6 /* Social.framework in Frameworks */,
 				68BF6BC119A2928B006844A6 /* Accounts.framework in Frameworks */,
@@ -115,8 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				6898993C19A28763007896B1 /* LFTLoginViewController.swift */,
-				680F48E019A3F94800A7BB81 /* LFTWorkoutsViewController.swift */,
-				680F48E219A3FB8E00A7BB81 /* LFTExercisesViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +121,7 @@
 		C6B4481A5F9C4FE484AB777E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				685AB8BF19A7959300879E22 /* CoreText.framework */,
 				68C2A42519A33E4D003C1DF4 /* FacebookSDK.framework */,
 				6849AA9319A2C03F0019EA31 /* Foundation.framework */,
 				68BF6BC219A29290006844A6 /* Social.framework */,
@@ -242,8 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				689557F019A3166C0098DBB6 /* LFTSpotter.swift in Sources */,
-				680F48E319A3FB8E00A7BB81 /* LFTExercisesViewController.swift in Sources */,
-				680F48E119A3F94800A7BB81 /* LFTWorkoutsViewController.swift in Sources */,
 				6898992119A28639007896B1 /* AppDelegate.swift in Sources */,
 				6898993D19A28763007896B1 /* LFTLoginViewController.swift in Sources */,
 			);

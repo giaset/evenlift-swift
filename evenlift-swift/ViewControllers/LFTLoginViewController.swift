@@ -25,20 +25,6 @@ class LFTLoginViewController: UIViewController {
     }
     
     func launchApp() {
-        var workouts = LFTWorkoutsViewController(style: .Grouped)
-        var workoutsNavController = UINavigationController(rootViewController: workouts)
-        
-        var exercises = LFTExercisesViewController(style: .Grouped)
-        var exercisesNavController = UINavigationController(rootViewController: exercises)
-        
-        var controllers = NSMutableArray()
-        controllers.addObject(workoutsNavController)
-        controllers.addObject(exercisesNavController)
-        
-        var tabBarController = UITabBarController()
-        tabBarController.viewControllers = controllers
-        
-        self.presentViewController(tabBarController, animated: false, completion: nil)
     }
     
 }

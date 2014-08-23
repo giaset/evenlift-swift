@@ -40,44 +40,47 @@ class LFTMainViewController: UIViewController {
         
         // First button (Bench)
         var benchButton = FUIButton(frame: CGRect(x: padding, y: padding, width: buttonWidth, height: buttonHeight))
-        styleButton(&benchButton)
-        benchButton.setTitle("BENCH", forState: .Normal)
+        styleButton(&benchButton, withTitle: "BENCH")
         view.addSubview(benchButton)
         
         // Second button (Squat)
         var squatButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: padding, width: buttonWidth, height: buttonHeight))
-        styleButton(&squatButton)
-        squatButton.setTitle("SQUAT", forState: .Normal)
+        styleButton(&squatButton, withTitle: "SQUAT")
         view.addSubview(squatButton)
         
         // Third button (Press)
         var pressButton = FUIButton(frame: CGRect(x: padding, y: (2*padding)+buttonHeight, width: buttonWidth, height: buttonHeight))
-        styleButton(&pressButton)
-        pressButton.setTitle("PRESS", forState: .Normal)
+        styleButton(&pressButton, withTitle: "PRESS")
         view.addSubview(pressButton)
         
         // Fourth button (Deadlift)
         var dlButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: (2*padding)+buttonHeight, width: buttonWidth, height: buttonHeight))
-        styleButton(&dlButton)
-        dlButton.setTitle("DEADLIFT", forState: .Normal)
+        styleButton(&dlButton, withTitle: "DEADLIFT")
         view.addSubview(dlButton)
         
         // Bottom button (Other)
-        var otherButton = FUIButton(frame: CGRect(x: padding, y: (3*padding)+(2*buttonHeight), width: iphoneWidth-(2*padding), height: otherButtonHeight))
+        /*var otherButton = FUIButton(frame: CGRect(x: padding, y: (3*padding)+(2*buttonHeight), width: iphoneWidth-(2*padding), height: otherButtonHeight))
         styleButton(&otherButton)
         otherButton.buttonColor = UIColor.peterRiverColor()
         otherButton.shadowColor = UIColor.belizeHoleColor()
-        otherButton.setTitle("OTHER", forState: .Normal)
-        view.addSubview(otherButton)
+        view.addSubview(otherButton)*/
     }
     
-    func styleButton(inout button: FUIButton) {
+    func styleButton(inout button: FUIButton, withTitle title: String) {
         button.buttonColor = UIColor.turquoiseColor()
         button.shadowColor = UIColor.greenSeaColor()
         button.shadowHeight = 3
         button.cornerRadius = 6
         button.titleLabel.font = UIFont.boldFlatFontOfSize(20)
         button.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+        
+        var titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 0, height: 0))
+        titleLabel.text = title
+        titleLabel.textColor = UIColor.cloudsColor()
+        titleLabel.font = UIFont.boldFlatFontOfSize(14)
+        titleLabel.sizeToFit()
+        titleLabel.frame.origin.x = (button.frame.width/2) - (titleLabel.frame.width/2)
+        button.addSubview(titleLabel)
     }
     
 }

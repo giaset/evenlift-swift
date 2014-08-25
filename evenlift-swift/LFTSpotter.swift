@@ -24,19 +24,21 @@ class LFTSpotter: NSObject {
         return Static.instance
     }
     
-    init() {
+    override init() {
         firebase = Firebase(url: url)
         authClient = FirebaseSimpleLogin(ref: firebase)
+        
+        super.init()
     }
     
     func makeSureUserIsLoggedIn(#completion: () -> ()) {
         // Log user in if he isn't already
         authClient.checkAuthStatusWithBlock({
             (error: NSError!, user: FAUser!) in
-            if (error) {
+            if (error != nil) {
                 // there was an error
                 self.showAlertWithTitle("Error", message: error.description)
-            } else if (!user) {
+            } else if (user == nil) {
                 // user is not logged in
                 self.loginWithCompletion({
                     user in
@@ -52,7 +54,7 @@ class LFTSpotter: NSObject {
     func loginWithCompletion(completion: (FAUser!) -> ()) {
         authClient.loginToFacebookAppWithId(facebookAppId, permissions: nil, audience: ACFacebookAudienceOnlyMe, withCompletionBlock:{
             (error: NSError!, user: FAUser!) in
-            if (error) {
+            if (error != nil) {
                 // there was an error
                 self.showAlertWithTitle("Error", message: error.description)
             } else {

@@ -32,32 +32,38 @@ class LFTMainViewController: UIViewController {
     }
     
     func setupButtons() {
-        let iphoneHeight = 568-64
-        let iphoneWidth = 320
+        var scrollview = UIScrollView(frame: view.frame)
+        scrollview.showsVerticalScrollIndicator = false
         
-        let padding = 10 // this value dictates everything!
-        let buttonWidth = iphoneWidth-(2*padding)
-        let buttonHeight = (iphoneHeight-(5*padding))/4
+        let iphoneWidth: CGFloat = 320
+        
+        let horizontalPadding: CGFloat = 25
+        let verticalPadding: CGFloat = 10
+        let buttonWidth: CGFloat = iphoneWidth-(2*horizontalPadding)
+        let buttonHeight: CGFloat = CGFloat(buttonWidth)*0.75
         
         // First button (Bench)
-        var benchButton = FUIButton(frame: CGRect(x: padding, y: padding, width: buttonWidth, height: buttonHeight))
+        var benchButton = FUIButton(frame: CGRect(x: horizontalPadding, y: verticalPadding, width: buttonWidth, height: buttonHeight))
         styleButton(&benchButton, withTitle: "BENCH")
-        view.addSubview(benchButton)
+        scrollview.addSubview(benchButton)
         
         // Second button (Squat)
-        var squatButton = FUIButton(frame: CGRect(x: padding, y: buttonHeight+(2*padding), width: buttonWidth, height: buttonHeight))
+        var squatButton = FUIButton(frame: CGRect(x: horizontalPadding, y: buttonHeight+(2*verticalPadding), width: buttonWidth, height: buttonHeight))
         styleButton(&squatButton, withTitle: "SQUAT")
-        view.addSubview(squatButton)
+        scrollview.addSubview(squatButton)
         
         // Third button (Press)
-        var pressButton = FUIButton(frame: CGRect(x: padding, y: (2*buttonHeight)+(3*padding), width: buttonWidth, height: buttonHeight))
+        var pressButton = FUIButton(frame: CGRect(x: horizontalPadding, y: (2*buttonHeight)+(3*verticalPadding), width: buttonWidth, height: buttonHeight))
         styleButton(&pressButton, withTitle: "PRESS")
-        view.addSubview(pressButton)
+        scrollview.addSubview(pressButton)
         
         // Fourth button (Deadlift)
-        var dlButton = FUIButton(frame: CGRect(x: padding, y: (3*buttonHeight)+(4*padding), width: buttonWidth, height: buttonHeight))
+        var dlButton = FUIButton(frame: CGRect(x: horizontalPadding, y: (3*buttonHeight)+(4*verticalPadding), width: buttonWidth, height: buttonHeight))
         styleButton(&dlButton, withTitle: "DEADLIFT")
-        view.addSubview(dlButton)
+        scrollview.addSubview(dlButton)
+        
+        scrollview.contentSize = CGSize(width: iphoneWidth, height: 64+(4*buttonHeight)+(5*verticalPadding))
+        view.addSubview(scrollview)
     }
     
     func styleButton(inout button: FUIButton, withTitle title: String) {
@@ -82,7 +88,7 @@ class LFTMainViewController: UIViewController {
         button.buttonColor = highlightColor
         
         /* TITLE LABEL */
-        var titleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: 0, height: 0))
+        var titleLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
         titleLabel.text = title
         titleLabel.textColor = UIColor.cloudsColor()
         titleLabel.font = UIFont.boldFlatFontOfSize(14)
@@ -94,7 +100,7 @@ class LFTMainViewController: UIViewController {
         var repMaxLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         repMaxLabel.text = "275"
         repMaxLabel.textColor = UIColor.cloudsColor()
-        repMaxLabel.font = UIFont.boldFlatFontOfSize(68)
+        repMaxLabel.font = UIFont.boldFlatFontOfSize(100)
         repMaxLabel.sizeToFit()
         repMaxLabel.frame.origin.x = (button.frame.width/2) - (repMaxLabel.frame.width/2)
         repMaxLabel.frame.origin.y = (button.frame.height/2) - (repMaxLabel.frame.height/2)

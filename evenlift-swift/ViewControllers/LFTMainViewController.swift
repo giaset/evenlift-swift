@@ -32,32 +32,30 @@ class LFTMainViewController: UIViewController {
     }
     
     func setupButtons() {
-        let iphoneHeight = 568
+        let iphoneHeight = 568-64
         let iphoneWidth = 320
         
         let padding = 10 // this value dictates everything!
-        let buttonWidth = (iphoneWidth-(3*padding))/2
-        let buttonHeight = buttonWidth
-        
-        let verticalSpacing = ((iphoneHeight-(2*buttonHeight)-padding)/2)-64 // to account for nav and status bars
+        let buttonWidth = iphoneWidth-(2*padding)
+        let buttonHeight = (iphoneHeight-(5*padding))/4
         
         // First button (Bench)
-        var benchButton = FUIButton(frame: CGRect(x: padding, y: verticalSpacing, width: buttonWidth, height: buttonHeight))
+        var benchButton = FUIButton(frame: CGRect(x: padding, y: padding, width: buttonWidth, height: buttonHeight))
         styleButton(&benchButton, withTitle: "BENCH")
         view.addSubview(benchButton)
         
         // Second button (Squat)
-        var squatButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: verticalSpacing, width: buttonWidth, height: buttonHeight))
+        var squatButton = FUIButton(frame: CGRect(x: padding, y: buttonHeight+(2*padding), width: buttonWidth, height: buttonHeight))
         styleButton(&squatButton, withTitle: "SQUAT")
         view.addSubview(squatButton)
         
         // Third button (Press)
-        var pressButton = FUIButton(frame: CGRect(x: padding, y: verticalSpacing+padding+buttonHeight, width: buttonWidth, height: buttonHeight))
+        var pressButton = FUIButton(frame: CGRect(x: padding, y: (2*buttonHeight)+(3*padding), width: buttonWidth, height: buttonHeight))
         styleButton(&pressButton, withTitle: "PRESS")
         view.addSubview(pressButton)
         
         // Fourth button (Deadlift)
-        var dlButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: verticalSpacing+padding+buttonHeight, width: buttonWidth, height: buttonHeight))
+        var dlButton = FUIButton(frame: CGRect(x: padding, y: (3*buttonHeight)+(4*padding), width: buttonWidth, height: buttonHeight))
         styleButton(&dlButton, withTitle: "DEADLIFT")
         view.addSubview(dlButton)
     }
@@ -84,7 +82,7 @@ class LFTMainViewController: UIViewController {
         button.buttonColor = highlightColor
         
         /* TITLE LABEL */
-        var titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 0, height: 0))
+        var titleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: 0, height: 0))
         titleLabel.text = title
         titleLabel.textColor = UIColor.cloudsColor()
         titleLabel.font = UIFont.boldFlatFontOfSize(14)
@@ -96,14 +94,14 @@ class LFTMainViewController: UIViewController {
         var repMaxLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         repMaxLabel.text = "275"
         repMaxLabel.textColor = UIColor.cloudsColor()
-        repMaxLabel.font = UIFont.boldFlatFontOfSize(72)
+        repMaxLabel.font = UIFont.boldFlatFontOfSize(68)
         repMaxLabel.sizeToFit()
         repMaxLabel.frame.origin.x = (button.frame.width/2) - (repMaxLabel.frame.width/2)
         repMaxLabel.frame.origin.y = (button.frame.height/2) - (repMaxLabel.frame.height/2)
         button.addSubview(repMaxLabel)
         
         /* PROGRESS VIEW */
-        let progressViewMargin: CGFloat = 3
+        let progressViewMargin: CGFloat = 5
         let progressViewHeight: CGFloat = 5
         let progressViewMaxWidth = button.frame.width-(2*progressViewMargin)
         let progressViewY = button.frame.height-progressViewHeight-progressViewMargin

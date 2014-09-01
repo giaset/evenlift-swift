@@ -32,36 +32,39 @@ class LFTMainViewController: UIViewController {
     }
     
     func setupButtons() {
-        let iphoneHeight = 568-64 // to account for status and nav bars
+        let iphoneHeight = 568
         let iphoneWidth = 320
         
         let padding = 10 // this value dictates everything!
         let buttonWidth = (iphoneWidth-(3*padding))/2
         let buttonHeight = buttonWidth
         
+        let verticalSpacing = ((iphoneHeight-(2*buttonHeight)-padding)/2)-64 // to account for nav and status bars
+        
         // First button (Bench)
-        var benchButton = FUIButton(frame: CGRect(x: padding, y: padding, width: buttonWidth, height: buttonHeight))
+        var benchButton = FUIButton(frame: CGRect(x: padding, y: verticalSpacing, width: buttonWidth, height: buttonHeight))
         styleButton(&benchButton, withTitle: "BENCH")
         view.addSubview(benchButton)
         
         // Second button (Squat)
-        var squatButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: padding, width: buttonWidth, height: buttonHeight))
+        var squatButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: verticalSpacing, width: buttonWidth, height: buttonHeight))
         styleButton(&squatButton, withTitle: "SQUAT")
         view.addSubview(squatButton)
         
         // Third button (Press)
-        var pressButton = FUIButton(frame: CGRect(x: padding, y: (2*padding)+buttonHeight, width: buttonWidth, height: buttonHeight))
+        var pressButton = FUIButton(frame: CGRect(x: padding, y: verticalSpacing+padding+buttonHeight, width: buttonWidth, height: buttonHeight))
         styleButton(&pressButton, withTitle: "PRESS")
         view.addSubview(pressButton)
         
         // Fourth button (Deadlift)
-        var dlButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: (2*padding)+buttonHeight, width: buttonWidth, height: buttonHeight))
+        var dlButton = FUIButton(frame: CGRect(x: (2*padding)+buttonWidth, y: verticalSpacing+padding+buttonHeight, width: buttonWidth, height: buttonHeight))
         styleButton(&dlButton, withTitle: "DEADLIFT")
         view.addSubview(dlButton)
     }
     
     func styleButton(inout button: FUIButton, withTitle title: String) {
         button.buttonColor = UIColor.cloudsColor()
+        button.highlightedColor = UIColor.silverColor()
         button.cornerRadius = 1
         
         var highlightColor: UIColor
@@ -98,11 +101,26 @@ class LFTMainViewController: UIViewController {
         button.addSubview(repMaxLabel)
         
         /* PROGRESS VIEW */
+        let progressViewMargin: CGFloat = 3
         let progressViewHeight: CGFloat = 5
-        var progressView = UIView(frame: CGRect(x: 3, y: button.frame.height-progressViewHeight-3, width: button.frame.width-15, height: progressViewHeight))
+        let progressViewMaxWidth = button.frame.width-(2*progressViewMargin)
+        let progressViewY = button.frame.height-progressViewHeight-progressViewMargin
+        var progressView = UIView(frame: CGRect(x: progressViewMargin, y: progressViewY, width: progressViewMaxWidth*0.625, height: progressViewHeight))
         progressView.backgroundColor = highlightColor
         progressView.layer.cornerRadius = 1
         button.addSubview(progressView)
+        
+        /* LITTLE NOTCHES ON PROGRESS VIEW */
+        let notchWidth: CGFloat = 1
+        let notchSpacing = progressViewMaxWidth/4
+        
+        var notch1 = UIView(frame: CGRect(x: progressViewMargin+notchSpacing, y: progressViewY, width: notchWidth, height: progressViewHeight))
+        notch1.backgroundColor = UIColor.cloudsColor()
+        button.addSubview(notch1)
+        
+        var notch2 = UIView(frame: CGRect(x: progressViewMargin+(2*notchSpacing), y: progressViewY, width: notchWidth, height: progressViewHeight))
+        notch2.backgroundColor = UIColor.cloudsColor()
+        button.addSubview(notch2)
     }
     
 }

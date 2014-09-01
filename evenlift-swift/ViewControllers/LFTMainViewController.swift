@@ -81,10 +81,12 @@ class LFTMainViewController: UIViewController {
             highlightColor = darkColor
         }
         
+        button.buttonColor = highlightColor
+        
         /* TITLE LABEL */
         var titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 0, height: 0))
         titleLabel.text = title
-        titleLabel.textColor = highlightColor
+        titleLabel.textColor = UIColor.cloudsColor()
         titleLabel.font = UIFont.boldFlatFontOfSize(14)
         titleLabel.sizeToFit()
         titleLabel.frame.origin.x = (button.frame.width/2) - (titleLabel.frame.width/2)
@@ -93,7 +95,7 @@ class LFTMainViewController: UIViewController {
         /* 1RM LABEL */
         var repMaxLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         repMaxLabel.text = "275"
-        repMaxLabel.textColor = darkColor
+        repMaxLabel.textColor = UIColor.cloudsColor()
         repMaxLabel.font = UIFont.boldFlatFontOfSize(72)
         repMaxLabel.sizeToFit()
         repMaxLabel.frame.origin.x = (button.frame.width/2) - (repMaxLabel.frame.width/2)
@@ -106,7 +108,7 @@ class LFTMainViewController: UIViewController {
         let progressViewMaxWidth = button.frame.width-(2*progressViewMargin)
         let progressViewY = button.frame.height-progressViewHeight-progressViewMargin
         var progressView = UIView(frame: CGRect(x: progressViewMargin, y: progressViewY, width: progressViewMaxWidth*0.625, height: progressViewHeight))
-        progressView.backgroundColor = highlightColor
+        progressView.backgroundColor = UIColor.cloudsColor()
         progressView.layer.cornerRadius = 1
         button.addSubview(progressView)
         
@@ -115,11 +117,11 @@ class LFTMainViewController: UIViewController {
         let notchSpacing = progressViewMaxWidth/4
         
         var notch1 = UIView(frame: CGRect(x: progressViewMargin+notchSpacing, y: progressViewY, width: notchWidth, height: progressViewHeight))
-        notch1.backgroundColor = UIColor.cloudsColor()
+        notch1.backgroundColor = highlightColor
         button.addSubview(notch1)
         
         var notch2 = UIView(frame: CGRect(x: progressViewMargin+(2*notchSpacing), y: progressViewY, width: notchWidth, height: progressViewHeight))
-        notch2.backgroundColor = UIColor.cloudsColor()
+        notch2.backgroundColor = highlightColor
         button.addSubview(notch2)
     }
     

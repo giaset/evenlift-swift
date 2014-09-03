@@ -65,9 +65,8 @@ class LFTMainViewController: UIViewController {
     }
     
     func styleButton(inout button: FUIButton, withTitle title: String) {
-        button.buttonColor = UIColor.cloudsColor()
-        button.highlightedColor = UIColor.silverColor()
-        button.cornerRadius = 1
+        let cornerRadius: CGFloat = 3
+        button.cornerRadius = cornerRadius
         
         var highlightColor: UIColor
         switch title {
@@ -104,6 +103,14 @@ class LFTMainViewController: UIViewController {
         repMaxLabel.frame.origin.y = (button.frame.height/2) - (repMaxLabel.frame.height/2)
         button.addSubview(repMaxLabel)
         
+        /* UNIT LABEL */
+        var unitLabel = UILabel(frame: CGRect(x: repMaxLabel.frame.maxX+2, y: repMaxLabel.frame.minY+20, width: 0, height: 0))
+        unitLabel.text = "LBS"
+        unitLabel.textColor = UIColor.cloudsColor()
+        unitLabel.font = UIFont.flatFontOfSize(18)
+        unitLabel.sizeToFit()
+        button.addSubview(unitLabel)
+        
         /* PROGRESS VIEW */
         let progressViewMargin: CGFloat = 5
         let progressViewHeight: CGFloat = 10
@@ -111,7 +118,7 @@ class LFTMainViewController: UIViewController {
         let progressViewY = button.frame.height-progressViewHeight-progressViewMargin
         var progressView = UIView(frame: CGRect(x: progressViewMargin, y: progressViewY, width: progressViewMaxWidth*0.625, height: progressViewHeight))
         progressView.backgroundColor = UIColor.cloudsColor()
-        progressView.layer.cornerRadius = 1
+        progressView.layer.cornerRadius = cornerRadius
         button.addSubview(progressView)
         
         /* LITTLE NOTCHES ON PROGRESS VIEW */

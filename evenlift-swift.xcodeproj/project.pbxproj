@@ -24,6 +24,7 @@
 		68BF6BC119A2928B006844A6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF6BC019A2928B006844A6 /* Accounts.framework */; };
 		68BF6BC319A29290006844A6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF6BC219A29290006844A6 /* Social.framework */; };
 		68C2A42619A33E4D003C1DF4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C2A42519A33E4D003C1DF4 /* FacebookSDK.framework */; };
+		68F1FB7C19B4EA1500072CDC /* LFTDashboardTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F1FB7B19B4EA1500072CDC /* LFTDashboardTile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		68BF6BC019A2928B006844A6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		68BF6BC219A29290006844A6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		68C2A42519A33E4D003C1DF4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		68F1FB7B19B4EA1500072CDC /* LFTDashboardTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTDashboardTile.swift; path = "Custom Views/LFTDashboardTile.swift"; sourceTree = "<group>"; };
 		AEFA78114E2A4D2AA8D358BD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B96EBED7F79C457696339B30 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				689557EF19A3166C0098DBB6 /* LFTSpotter.swift */,
 				6898992019A28639007896B1 /* AppDelegate.swift */,
 				6898993E19A2876A007896B1 /* ViewControllers */,
+				68F1FB7A19B4E9E800072CDC /* Custom Views */,
 				6898992219A28639007896B1 /* Images.xcassets */,
 				6898991E19A28639007896B1 /* Supporting Files */,
 			);
@@ -119,6 +122,14 @@
 				685AB8C119A7F02300879E22 /* LFTMainViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		68F1FB7A19B4E9E800072CDC /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				68F1FB7B19B4EA1500072CDC /* LFTDashboardTile.swift */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 		C6B4481A5F9C4FE484AB777E /* Frameworks */ = {
@@ -245,6 +256,7 @@
 				685AB8C219A7F02300879E22 /* LFTMainViewController.swift in Sources */,
 				689557F019A3166C0098DBB6 /* LFTSpotter.swift in Sources */,
 				6898992119A28639007896B1 /* AppDelegate.swift in Sources */,
+				68F1FB7C19B4EA1500072CDC /* LFTDashboardTile.swift in Sources */,
 				6898993D19A28763007896B1 /* LFTLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,20 +15,18 @@ class LFTMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Evenlift"
-        
         view.backgroundColor = darkColor
         
-        styleNavBar()
+        navigationController.navigationBarHidden = true
+        
         setupButtons()
+        setupStatusBar()
     }
     
-    func styleNavBar() {
-        navigationController.navigationBar.configureFlatNavigationBarWithColor(darkColor)
-        var attributes = NSMutableDictionary(dictionary: navigationController.navigationBar.titleTextAttributes)
-        attributes.setValue(UIFont.boldFlatFontOfSize(18), forKey: NSFontAttributeName)
-        attributes.setValue(UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
-        navigationController.navigationBar.titleTextAttributes = attributes
+    func setupStatusBar() {
+        var statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 20))
+        statusBarView.backgroundColor = darkColor
+        view.addSubview(statusBarView)
     }
     
     func setupButtons() {
@@ -37,7 +35,7 @@ class LFTMainViewController: UIViewController {
         
         let iphoneWidth: CGFloat = 320
         
-        let horizontalPadding: CGFloat = 25
+        let horizontalPadding: CGFloat = 10
         let verticalPadding: CGFloat = 10
         let buttonWidth: CGFloat = iphoneWidth-(2*horizontalPadding)
         let buttonHeight: CGFloat = CGFloat(buttonWidth)*0.75
@@ -62,7 +60,7 @@ class LFTMainViewController: UIViewController {
         styleButton(&dlButton, withTitle: "DEADLIFT")
         scrollview.addSubview(dlButton)
         
-        scrollview.contentSize = CGSize(width: iphoneWidth, height: 64+(4*buttonHeight)+(5*verticalPadding))
+        scrollview.contentSize = CGSize(width: iphoneWidth, height: (4*buttonHeight)+(5*verticalPadding))
         view.addSubview(scrollview)
     }
     
@@ -91,7 +89,7 @@ class LFTMainViewController: UIViewController {
         var titleLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
         titleLabel.text = title
         titleLabel.textColor = UIColor.cloudsColor()
-        titleLabel.font = UIFont.boldFlatFontOfSize(14)
+        titleLabel.font = UIFont.boldFlatFontOfSize(18)
         titleLabel.sizeToFit()
         titleLabel.frame.origin.x = (button.frame.width/2) - (titleLabel.frame.width/2)
         button.addSubview(titleLabel)
@@ -108,7 +106,7 @@ class LFTMainViewController: UIViewController {
         
         /* PROGRESS VIEW */
         let progressViewMargin: CGFloat = 5
-        let progressViewHeight: CGFloat = 5
+        let progressViewHeight: CGFloat = 10
         let progressViewMaxWidth = button.frame.width-(2*progressViewMargin)
         let progressViewY = button.frame.height-progressViewHeight-progressViewMargin
         var progressView = UIView(frame: CGRect(x: progressViewMargin, y: progressViewY, width: progressViewMaxWidth*0.625, height: progressViewHeight))

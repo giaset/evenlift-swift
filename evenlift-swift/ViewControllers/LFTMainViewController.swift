@@ -68,21 +68,23 @@ class LFTMainViewController: UIViewController {
         let cornerRadius: CGFloat = 3
         button.cornerRadius = cornerRadius
         
-        var highlightColor: UIColor
+        var buttonColor: UIColor
+        var highlightColor = UIColor.whiteColor()
         switch title {
         case "BENCH":
-            highlightColor = UIColor.alizarinColor()
+            buttonColor = UIColor(fromHexCode: "F3545B")
         case "SQUAT":
-            highlightColor = UIColor.nephritisColor()
+            buttonColor = UIColor(fromHexCode: "628B85")
         case "PRESS":
-            highlightColor = UIColor.peterRiverColor()
+            buttonColor = UIColor(fromHexCode: "366387")
         case "DEADLIFT":
-            highlightColor = UIColor.sunflowerColor()
+            buttonColor = UIColor(fromHexCode: "FBDE5E")
         default:
-            highlightColor = darkColor
+            buttonColor = darkColor
         }
         
-        button.buttonColor = highlightColor
+        button.buttonColor = buttonColor
+        button.highlightedColor = highlightColor
         
         /* TITLE LABEL */
         var titleLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
@@ -126,11 +128,11 @@ class LFTMainViewController: UIViewController {
         let notchSpacing = progressViewMaxWidth/4
         
         var notch1 = UIView(frame: CGRect(x: progressViewMargin+notchSpacing, y: progressViewY, width: notchWidth, height: progressViewHeight))
-        notch1.backgroundColor = highlightColor
+        notch1.backgroundColor = buttonColor
         button.addSubview(notch1)
         
         var notch2 = UIView(frame: CGRect(x: progressViewMargin+(2*notchSpacing), y: progressViewY, width: notchWidth, height: progressViewHeight))
-        notch2.backgroundColor = highlightColor
+        notch2.backgroundColor = buttonColor
         button.addSubview(notch2)
     }
     

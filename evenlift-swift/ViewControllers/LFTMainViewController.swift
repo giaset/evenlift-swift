@@ -31,60 +31,59 @@ class LFTMainViewController: UIViewController {
     
     func setupButtons() {
         var scrollview = UIScrollView(frame: view.frame)
-        scrollview.showsVerticalScrollIndicator = false
+        scrollview.pagingEnabled = true
+        scrollview.showsHorizontalScrollIndicator = false
         
-        let iphoneWidth: CGFloat = 320
+        let iphoneWidth: CGFloat = UIScreen.mainScreen().bounds.width
+        let iphoneHeight: CGFloat = UIScreen.mainScreen().bounds.height
         
-        let horizontalPadding: CGFloat = 10
-        let verticalPadding: CGFloat = 10
+        let horizontalPadding: CGFloat = 25
+        
         let buttonWidth: CGFloat = iphoneWidth-(2*horizontalPadding)
-        let buttonHeight: CGFloat = CGFloat(buttonWidth)*0.75
+        let buttonHeight: CGFloat = buttonWidth
         
-        // First button (Bench)
-        var benchButton = FUIButton(frame: CGRect(x: horizontalPadding, y: verticalPadding, width: buttonWidth, height: buttonHeight))
-        styleButton(&benchButton, withTitle: "BENCH")
-        scrollview.addSubview(benchButton)
+        let verticalPadding: CGFloat = (iphoneHeight/2)-(buttonHeight/2)-20
         
-        // Second button (Squat)
-        var squatButton = FUIButton(frame: CGRect(x: horizontalPadding, y: buttonHeight+(2*verticalPadding), width: buttonWidth, height: buttonHeight))
-        styleButton(&squatButton, withTitle: "SQUAT")
-        scrollview.addSubview(squatButton)
+        // First tile (Bench)
+        var benchTile = UIView(frame: CGRect(x: horizontalPadding, y: verticalPadding, width: buttonWidth, height: buttonHeight))
+        styleTile(&benchTile, withTitle: "BENCH")
+        scrollview.addSubview(benchTile)
         
-        // Third button (Press)
-        var pressButton = FUIButton(frame: CGRect(x: horizontalPadding, y: (2*buttonHeight)+(3*verticalPadding), width: buttonWidth, height: buttonHeight))
-        styleButton(&pressButton, withTitle: "PRESS")
-        scrollview.addSubview(pressButton)
+        // Second tile (Squat)
+        var squatTile = UIView(frame: CGRect(x: iphoneWidth+horizontalPadding, y: verticalPadding, width: buttonWidth, height: buttonHeight))
+        styleTile(&squatTile, withTitle: "SQUAT")
+        scrollview.addSubview(squatTile)
         
-        // Fourth button (Deadlift)
-        var dlButton = FUIButton(frame: CGRect(x: horizontalPadding, y: (3*buttonHeight)+(4*verticalPadding), width: buttonWidth, height: buttonHeight))
-        styleButton(&dlButton, withTitle: "DEADLIFT")
-        scrollview.addSubview(dlButton)
+        // Third tile (Press)
+        var pressTile = UIView(frame: CGRect(x: (2*iphoneWidth)+horizontalPadding, y: verticalPadding, width: buttonWidth, height: buttonHeight))
+        styleTile(&pressTile, withTitle: "PRESS")
+        scrollview.addSubview(pressTile)
         
-        scrollview.contentSize = CGSize(width: iphoneWidth, height: (4*buttonHeight)+(5*verticalPadding))
+        // Fourth tile (Deadlift)
+        var dlTile = UIView(frame: CGRect(x: (3*iphoneWidth)+horizontalPadding, y: verticalPadding, width: buttonWidth, height: buttonHeight))
+        styleTile(&dlTile, withTitle: "DEADLIFT")
+        scrollview.addSubview(dlTile)
+        
+        scrollview.contentSize = CGSize(width: 4*iphoneWidth, height: 1)
         view.addSubview(scrollview)
     }
     
-    func styleButton(inout button: FUIButton, withTitle title: String) {
-        let cornerRadius: CGFloat = 3
-        button.cornerRadius = cornerRadius
-        
-        var buttonColor: UIColor
-        var highlightColor = UIColor.whiteColor()
+    func styleTile(inout tile: UIView, withTitle title: String) {
+        var backgroundColor: UIColor
         switch title {
         case "BENCH":
-            buttonColor = UIColor(fromHexCode: "F3545B")
+            backgroundColor = UIColor(fromHexCode: "F3545B")
         case "SQUAT":
-            buttonColor = UIColor(fromHexCode: "628B85")
+            backgroundColor = UIColor(fromHexCode: "628B85")
         case "PRESS":
-            buttonColor = UIColor(fromHexCode: "366387")
+            backgroundColor = UIColor(fromHexCode: "366387")
         case "DEADLIFT":
-            buttonColor = UIColor(fromHexCode: "FBDE5E")
+            backgroundColor = UIColor(fromHexCode: "FBDE5E")
         default:
-            buttonColor = darkColor
+            backgroundColor = darkColor
         }
         
-        button.buttonColor = buttonColor
-        button.highlightedColor = highlightColor
+        tile.backgroundColor = backgroundColor
         
         /* TITLE LABEL */
         var titleLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
@@ -92,8 +91,8 @@ class LFTMainViewController: UIViewController {
         titleLabel.textColor = UIColor.cloudsColor()
         titleLabel.font = UIFont.boldFlatFontOfSize(18)
         titleLabel.sizeToFit()
-        titleLabel.frame.origin.x = (button.frame.width/2) - (titleLabel.frame.width/2)
-        button.addSubview(titleLabel)
+        titleLabel.frame.origin.x = (tile.frame.width/2) - (titleLabel.frame.width/2)
+        tile.addSubview(titleLabel)
         
         /* 1RM LABEL */
         var repMaxLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -101,9 +100,9 @@ class LFTMainViewController: UIViewController {
         repMaxLabel.textColor = UIColor.cloudsColor()
         repMaxLabel.font = UIFont.boldFlatFontOfSize(100)
         repMaxLabel.sizeToFit()
-        repMaxLabel.frame.origin.x = (button.frame.width/2) - (repMaxLabel.frame.width/2)
-        repMaxLabel.frame.origin.y = (button.frame.height/2) - (repMaxLabel.frame.height/2)
-        button.addSubview(repMaxLabel)
+        repMaxLabel.frame.origin.x = (tile.frame.width/2) - (repMaxLabel.frame.width/2)
+        repMaxLabel.frame.origin.y = (tile.frame.height/2) - (repMaxLabel.frame.height/2)
+        tile.addSubview(repMaxLabel)
         
         /* UNIT LABEL */
         var unitLabel = UILabel(frame: CGRect(x: repMaxLabel.frame.maxX+2, y: repMaxLabel.frame.minY+20, width: 0, height: 0))
@@ -111,29 +110,28 @@ class LFTMainViewController: UIViewController {
         unitLabel.textColor = UIColor.cloudsColor()
         unitLabel.font = UIFont.flatFontOfSize(18)
         unitLabel.sizeToFit()
-        button.addSubview(unitLabel)
+        tile.addSubview(unitLabel)
         
         /* PROGRESS VIEW */
         let progressViewMargin: CGFloat = 5
         let progressViewHeight: CGFloat = 10
-        let progressViewMaxWidth = button.frame.width-(2*progressViewMargin)
-        let progressViewY = button.frame.height-progressViewHeight-progressViewMargin
+        let progressViewMaxWidth = tile.frame.width-(2*progressViewMargin)
+        let progressViewY = tile.frame.height-progressViewHeight-progressViewMargin
         var progressView = UIView(frame: CGRect(x: progressViewMargin, y: progressViewY, width: progressViewMaxWidth*0.625, height: progressViewHeight))
         progressView.backgroundColor = UIColor.cloudsColor()
-        progressView.layer.cornerRadius = cornerRadius
-        button.addSubview(progressView)
+        tile.addSubview(progressView)
         
         /* LITTLE NOTCHES ON PROGRESS VIEW */
         let notchWidth: CGFloat = 1
         let notchSpacing = progressViewMaxWidth/4
         
         var notch1 = UIView(frame: CGRect(x: progressViewMargin+notchSpacing, y: progressViewY, width: notchWidth, height: progressViewHeight))
-        notch1.backgroundColor = buttonColor
-        button.addSubview(notch1)
+        notch1.backgroundColor = backgroundColor
+        tile.addSubview(notch1)
         
         var notch2 = UIView(frame: CGRect(x: progressViewMargin+(2*notchSpacing), y: progressViewY, width: notchWidth, height: progressViewHeight))
-        notch2.backgroundColor = buttonColor
-        button.addSubview(notch2)
+        notch2.backgroundColor = backgroundColor
+        tile.addSubview(notch2)
     }
     
 }
